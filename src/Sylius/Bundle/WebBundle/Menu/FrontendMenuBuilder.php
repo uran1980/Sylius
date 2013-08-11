@@ -201,6 +201,7 @@ class FrontendMenuBuilder extends MenuBuilder
 
         foreach ($taxonomies as $taxonomy) {
             $child = $menu->addChild($taxonomy->getName(), $childOptions);
+
             if ($taxonomy->getRoot()->hasPath()) {
                 $child->setLabelAttribute('data-image', $taxonomy->getRoot()->getPath());
             }
@@ -256,11 +257,6 @@ class FrontendMenuBuilder extends MenuBuilder
             'uri' => 'http://facebook.com/SyliusEcommerce',
             'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.facebook')),
             'labelAttributes' => array('icon' => 'icon-facebook-sign icon-large', 'iconOnly' => true)
-        ));
-        $menu->addChild('linkedin', array(
-            'uri' => 'http://www.linkedin.com/groups/Sylius-Community-4903257',
-            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.linkedin')),
-            'labelAttributes' => array('icon' => 'icon-linkedin-sign icon-large', 'iconOnly' => true)
         ));
 
         return $menu;
